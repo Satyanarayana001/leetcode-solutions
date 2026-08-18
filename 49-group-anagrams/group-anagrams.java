@@ -7,9 +7,10 @@ class Solution {
 
             String key = new String(chars);
 
-            if (!map.containsKey(key)) {
+            /*if (!map.containsKey(key)) {
                 map.put(key, new ArrayList<>());
-            }
+            }*/
+            map.putIfAbsent(key, new ArrayList<>());
 
             map.get(key).add(str);
         }
