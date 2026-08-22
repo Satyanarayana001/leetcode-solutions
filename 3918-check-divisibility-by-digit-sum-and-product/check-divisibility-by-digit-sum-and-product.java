@@ -9,6 +9,7 @@ class Solution {
             product *= digit;
             n = n/10;
         }
-        return original % (sum + product) == 0;
+        int sum1 = sum + product;
+        return original%sum1 == 0;
     }
 }
