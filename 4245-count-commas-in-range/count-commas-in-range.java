@@ -1,15 +1,19 @@
 class Solution {
     public int countCommas(int n) {
-        int count = 0;
+        long start = 1000;
+        int commas = 1;
+        long count = 0;
 
-        if (n >= 1000) {
-            count += n - 999;
+        while (start <= n) {
+            long end = start * 1000 - 1;
+            long last = Math.min(n, end);
+
+            count += (last - start + 1) * commas;
+
+            start *= 1000;
+            commas++;
         }
 
-        if (n >= 1000000) {
-            count += (n - 999999);
-        }
-
-        return count;
+        return (int) count;
     }
 }
